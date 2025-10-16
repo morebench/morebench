@@ -4,7 +4,7 @@
 
 MoReBench tests LLMs on 1000 real-world ethical scenarios across diverse domains (healthcare, business, technology, law) and ethical frameworks (consequentialism, deontology, virtue ethics). Unlike current tasks focusing on the outcome accuracy (e.g. math and code), MoReBench evaluates the *quality of moral reasoning* through multi-dimensional rubrics.
 
-[Paper](link) | [Dataset](link) | [Leaderboard](link)
+[Paper](link) | [Dataset](link) | [Leaderboard](link) | [UK AISI Inspect Eval - Coming soon](link)
 
 ---
 
