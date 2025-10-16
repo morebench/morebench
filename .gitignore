@@ -1,0 +1,28 @@
+# Command files containing API keys and sensitive information
+command
+command*
+
+# Ignore any folders that start with "generations" (e.g., generations_for_..., generations_test, etc.)
+generations*/
+# Also ignore all contents within such folders
+generations*/**
+
+
+# API keys and credentials
+*.env
+.env
+
+# OS generated files
+.DS_Store
+.DS_Store?
+
+# input files 
+*.csv
+*.jsonl
+*.json
+
+# pycache
+__pycache__/
+*.pyc
+prompts/__pycache__/
+prompts/*.pyc
