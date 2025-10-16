@@ -329,35 +329,12 @@ Same arguments as `calculate_morebench.py`, except default `expected_samples`: 3
 ### Overall Score (0-100)
 The primary metric representing quality of moral reasoning across all criteria.
 
-### Rubric Criterion Dimensions
-- **Identifying**: Depth and completeness of analysis
-- **Logical Process**: Recognition of complexity and gray areas
-- **Clear Process**: Consideration of all affected parties
-- **Helpful Outcome**: Quality of outcome evaluation
-- **Harmless Outcome**: Use of ethical principles
 
 ### MoReBench-Easy (Raw Score)
 Score per 1,000 characters.
 
 ### MoReBench-Hard (Normalized Score)
 Score per 1,000 characters (controls for response length bias).
-
----
-
-## Dataset Details
-
-### Main Dataset (500 samples)
-- **Domains**: Healthcare (28%), Technology (24%), Business (22%), Law (16%), Other (10%)
-- **Complexity**: Professional-level dilemmas requiring multi-stakeholder analysis
-- **Rubrics**: 6-10 criteria per dilemma, weighted by importance
-- **Dimensions**: Thoroughness, Nuance, Stakeholder Analysis, Consequence Analysis, Framework Application
-- **Total Judgements**: ~11,568 (500 tasks × ~23 criteria average)
-
-### Theory Dataset (150 samples)
-- **Frameworks**: Consequentialism, Deontology, Virtue Ethics, Care Ethics, Rights-based
-- **Purpose**: Test how models apply specific ethical theories
-- **Use**: Compare model flexibility vs. consistency across frameworks
-- **Total Judgements**: ~3,835 (150 tasks × ~25 criteria average)
 
 ---
 
