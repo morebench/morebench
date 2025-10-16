@@ -6,6 +6,9 @@ MoReBench tests LLMs on 1000 real-world ethical scenarios across diverse domains
 
 [Paper](link) | [Dataset](link) | [Leaderboard](link) | [UK AISI Inspect Eval - Coming soon](link)
 
+
+![pipeline](img/intro_pipeline_img.png)
+
 ---
 
 ## Quick Start
