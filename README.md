@@ -4,7 +4,13 @@
 
 MoReBench tests LLMs on 1000 real-world ethical scenarios across diverse domains (healthcare, business, technology, law) and ethical frameworks (consequentialism, deontology, virtue ethics). Unlike current tasks focusing on the outcome accuracy (e.g. math and code), MoReBench evaluates the *quality of moral reasoning* through multi-dimensional rubrics.
 
-[Project Website](https://morebench.github.io/) | [Paper](link) | [Dataset](https://huggingface.co/datasets/morebench/morebench) | [Leaderboard - Coming soon](link) | [UK AISI Inspect Eval - Coming soon](link)
+<p align="center">
+  <a href="https://morebench.github.io/">Project Website</a> | 
+  <a href="link">Paper</a> | 
+  <a href="https://huggingface.co/datasets/morebench/morebench">Dataset</a> | 
+  <a href="link">Leaderboard - Coming soon</a> | 
+  <a href="link">UK AISI Inspect Eval - Coming soon</a>
+</p>
 
 
 ![pipeline](img/intro_pipeline_img.png)
@@ -14,8 +20,16 @@ MoReBench tests LLMs on 1000 real-world ethical scenarios across diverse domains
 ## Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/morebench/morebench.git
+cd morebench
+
+# create a new virtual environment
+conda create -n morebench python=3.12 -y
+conda activate morebench
+
 # Install dependencies
-pip install pandas anthropic openai tqdm numpy datasets
+pip install -r requirements.txt
 
 # 1. Generate model responses
 python run_inferences_on_dilemmas.py \
@@ -145,12 +159,12 @@ python run_best_judge_on_responses_theory.py \
 ```bash
 # Human-readable output
 python calculate_morebench.py \
-    -i model_resp_judgements_private/gpt-4o_reasoning_high_seed_0.jsonl \
+    -i model_resp_judgements/gpt-4o_reasoning_high_seed_0.jsonl \
     -f human
 
 # LaTeX table row (for papers)
 python calculate_morebench.py \
-    -i model_resp_judgements_private/gpt-4o_reasoning_high_seed_0.jsonl \
+    -i model_resp_judgements/gpt-4o_reasoning_high_seed_0.jsonl \
     -f latex
 ```
 
@@ -303,7 +317,7 @@ Same arguments as `calculate_morebench.py`, except default `expected_samples`: 3
 
 ### Judgment Phase
 
-**Format**: `{judgement_type}_judgements_{private|theory}/{filename}`
+**Format**: `{judgement_type}_judgements/{filename}` (`{judgement_type}_judgements_theory` for theory dataset)
 
 ```jsonl
 {
@@ -367,7 +381,7 @@ Score per 1,000 characters (controls for response length bias).
 
 ## License
 
-...
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ---
 
