@@ -1,17 +1,17 @@
 import argparse
-from ast import literal_eval
 import concurrent.futures
 import os
+from ast import literal_eval
 
 import pandas as pd
-from tqdm import tqdm
 from datasets import load_dataset
+from tqdm import tqdm
 
-from prompts.create_prompts_for_reasoning_eval import create_prompt_template_for_reasoning_eval_natural_behavior
-from utils import (
-    setup_client, get_model_filename, write_to_jsonl, load_existing_indices,
-    collect_response, collect_thinking_response
-)
+from prompts.create_prompts_for_reasoning_eval import \
+    create_prompt_template_for_reasoning_eval_natural_behavior
+from utils import (collect_response, collect_thinking_response,
+                   get_model_filename, load_existing_indices, setup_client,
+                   write_to_jsonl)
 
 parser = argparse.ArgumentParser(description='run inferences on MoReBench dilemmas under moral frameworks')
 parser.add_argument("--api_provider", "-ap", required=True, choices=['openai','anthropic','togetherai','xai','openrouter'])
@@ -66,8 +66,7 @@ def process_single_row(row, idx):
 
 
 # Load data
-# df = pd.read_csv(args.input_file)
-ds = load_dataset("morebench/morebench", token=args.hf_token, data_files="morebench_public.csv", split="test")
+ds = load_dataset("morebench/morebench", token=args.hf_token, data_files="morebench_theory.csv", split="train")
 df = ds.to_pandas()
 
 df = df[df['THEORY'] != 'neutral']

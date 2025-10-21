@@ -1,12 +1,15 @@
 import argparse
-import json
-import random
 import concurrent.futures
-from tqdm import tqdm
+import json
 import os
+import random
 
-from prompts.create_prompts_for_rubric_eval import create_prompt_template_judge_model
-from utils import setup_client, get_judge_response, prepare_criterion_data, load_existing_indices_as_set
+from tqdm import tqdm
+
+from prompts.create_prompts_for_rubric_eval import \
+    create_prompt_template_judge_model
+from utils import (get_judge_response, load_existing_indices_as_set,
+                   prepare_criterion_data, setup_client)
 
 parser = argparse.ArgumentParser(description='Run judge model on generated responses (MoReBench-Theory)')
 parser.add_argument("--input_file", "-i", required=True, help="Path to input JSONL file with generations")
@@ -16,7 +19,7 @@ parser.add_argument("--judgement_type", "-jt", default="model_resp",
                     help="Which field to judge: model_resp or thinking_trace")
 parser.add_argument("--num_parallel_request", "-n", type=int, default=160, 
                     help="Number of parallel requests")
-parser.add_argument("--debug", "-d", action='store_true', help='Debug with only 10 examples')
+parser.add_argument("--debug", "-d", action='store_true', help='Debug with only 5 examples')
 parser.add_argument("--judge_model", "-jm", default="openai/gpt-oss-120b", 
                     help="Judge model to use (default: openai/gpt-oss-120b)")
 parser.add_argument("--expected_samples", "-es", type=int, default=150,
@@ -50,8 +53,8 @@ with open(args.input_file, "r") as f:
 
 
 if args.debug:
-    data = data[:10]
-    print("DEBUG MODE: Processing only 10 samples")
+    data = data[:5]
+    print("DEBUG MODE: Processing only 5 samples")
 else:
     assert len(data) == args.expected_samples, f"Expected {args.expected_samples} samples but found {len(data)}"
 

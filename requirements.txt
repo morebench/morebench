@@ -1,0 +1,6 @@
+pandas
+anthropic
+openai
+tqdm
+numpy
+datasets
