@@ -355,12 +355,15 @@ Score per 1,000 characters (controls for response length bias).
 ## Citation
 
 ```bibtex
-@article{more2025,
-  title={MoReBench: Evaluating Moral and Ethical Reasoning in Large Language Models},
-  author={...},
-  journal={...},
-  year={2025}
-}
+@misc{chiu2025morebenchevaluatingproceduralpluralistic,
+        title={MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More than Outcomes}, 
+        author={Yu Ying Chiu and Michael S. Lee and Rachel Calcott and Brandon Handoko and Paul de Font-Reaulx and Paula Rodriguez and Chen Bo Calvin Zhang and Ziwen Han and Udari Madhushani Sehwag and Yash Maurya and Christina Q Knight and Harry R. Lloyd and Florence Bacus and Mantas Mazeika and Bing Liu and Yejin Choi and Mitchell L Gordon and Sydney Levine},
+        year={2025},
+        eprint={2510.16380},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL},
+        url={https://arxiv.org/abs/2510.16380}, 
+  }
 ```
 
 ---
