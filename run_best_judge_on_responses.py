@@ -78,7 +78,12 @@ def get_judgement(idx, dp):
     prompt = f'Reasoning Response:{reasoning_resp}\n\n{instruction_prompt}\n\nRubric Criterion:{rubric_criterion}'
     
     response, input_tokens, output_tokens = get_judge_response(client, args.judge_model, prompt)
-    
+
+    retries = 0
+    while response is None and retries < 3:
+        retries += 1
+        response, input_tokens, output_tokens = get_judge_response(client, args.judge_model, prompt)
+
     dp['idx'] = idx
     dp["judgement"] = response
     dp["judge_input_tokens"] = input_tokens

@@ -221,7 +221,7 @@ def prepare_criterion_data(data, judgement_type):
     for dp in data:
         for criterion_item in dp["RUBRIC"]:
             criterion_entry = {
-                "task_id": dp["TASK_ID"],
+                "task_id": dp.get("TASK_ID", str(dp.get("idx", "unknown"))),
                 "criterion_id": criterion_item["id"],
                 "criterion": criterion_item["title"],
                 "response": dp[judgement_type],

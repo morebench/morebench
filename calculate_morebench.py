@@ -11,8 +11,8 @@ parser = argparse.ArgumentParser(description='Calculate MoReBench scores from ju
 parser.add_argument("--input_file", "-i", required=True, help="Path to judgement JSONL file")
 parser.add_argument("--format", "-f", default="latex", choices=["latex", "human"], 
                     help="Output format: latex (table row) or human (readable)")
-parser.add_argument("--expected_samples", "-es", type=int, default=11568,
-                    help="Expected number of judgement entries (default: 11568)")
+parser.add_argument("--expected_samples", "-es", type=int, default=11450,
+                    help="Expected number of judgement entries (default: 11450)")
 
 args = parser.parse_args()
 
