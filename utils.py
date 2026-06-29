@@ -345,7 +345,7 @@ def calculate_task_level_averages(task_id_to_criteria, field):
     """Calculate task-level averages for token usage or response length"""
     if field == "len":
         values = [
-            len(criteria[0]["response"]) 
+            len(criteria[0]["response"] or "")
             for _, criteria in task_id_to_criteria.items()
         ]
     else:
